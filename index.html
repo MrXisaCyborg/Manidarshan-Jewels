@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mani Darshan Jewels - Timeless Elegance</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23D4AF37'/%3E%3Ctext x='50' y='62' font-family='serif' font-size='38' font-weight='bold' fill='%237C0A2A' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --burgundy: #7C0A2A;
+            --dark-burgundy: #5A0719;
+            --gold: #D4AF37;
+            --light-gold: #F4E4C1;
+            --cream: #F5F5DC;
+            --white: #FFFFFF;
+            --black: #1A1A1A;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--black);
+            background-color: var(--cream);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--burgundy);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .logo-badge {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--burgundy);
+            border: 2px solid var(--gold);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        .brand-subtitle {
+            font-size: 11px;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--gold);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        /* Section Display Control */
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 600px;
+            background: url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200') center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-title {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), #F4E4C1);
+            color: var(--burgundy);
+            animation: fadeInUp 1.4s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #F4E4C1, var(--gold));
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--burgundy);
+            border: 2px solid var(--burgundy);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--burgundy);
+            color: var(--white);
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 50px;
+            color: var(--burgundy);
+        }
+
+        /* Featured Collections */
+        .featured-collections {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .collection-card {
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .collection-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .collection-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .collection-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 30px;
+            color: var(--white);
+        }
+
+        .collection-card h3 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .collection-card p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .collection-overlay .btn-discover {
+            background: linear-gradient(135deg, var(--gold), #F4E4C1);
+            color: var(--burgundy);
+            padding: 14px 35px;
+            border-radius: 3px;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .collection-overlay .btn-discover::before {
+            content: '✦';
+            position: absolute;
+            left: 15px;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .collection-overlay .btn-discover::after {
+            content: '✦';
+            position: absolute;
+            right: 15px;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .collection-overlay .btn-discover:hover {
+            background: linear-gradient(135deg, #F4E4C1, var(--gold));
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            border-color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        .collection-overlay .btn-discover:hover::before {
+            opacity: 1;
+            left: 10px;
+        }
+
+        .collection-overlay .btn-discover:hover::after {
+            opacity: 1;
+            right: 10px;
+        }
+
+        /* Featured Products */
+        .featured-products {
+            padding: 80px 0;
+            background-color: var(--cream);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.15);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            font-size: 12px;
+            color: var(--burgundy);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--black);
+        }
+
+        .product-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--burgundy);
+            margin-bottom: 15px;
+        }
+
+        .product-card .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 13px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-content h2 {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* Our Story Section */
+        .our-story {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .story-content h3 {
+            font-size: 32px;
+            color: var(--burgundy);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .story-content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--black);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--cream);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 35px;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--burgundy);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            color: var(--gold);
+            margin-top: 5px;
+        }
+
+        .contact-item h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--burgundy);
+        }
+
+        .contact-item p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .contact-item a {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 14px;
+            font-family: 'Lato', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        textarea.form-input {
+            resize: vertical;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-burgundy);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo .logo-badge {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--burgundy);
+            border: 2px solid var(--gold);
+        }
+
+        .footer-logo .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .footer-logo .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        .footer-logo .brand-subtitle {
+            font-size: 11px;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+
+        .footer-desc {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--gold);
+            color: var(--burgundy);
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease;
+        }
+
+        /* Alert */
+        .alert {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 2000;
+            animation: slideInRight 0.3s ease;
+        }
+
+        .alert-success {
+            background-color: #28a745;
+            color: white;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background-color: var(--burgundy);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .about-grid,
+            .contact-grid,
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .collections-grid,
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="showSection('home')">
+                <div class="logo-badge">MD</div>
+                <div class="logo-text">
+                    <span class="brand-name">MANI DARSHAN</span>
+                    <span class="brand-subtitle">JEWELS</span>
+                </div>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a class="nav-link active" onclick="showSection('home')">HOME</a></li>
+                <li><a class="nav-link" onclick="showSection('collections')">COLLECTIONS</a></li>
+                <li><a class="nav-link" onclick="showSection('about')">ABOUT</a></li>
+                <li><a class="nav-link" onclick="showSection('contact')">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <div id="home-section" class="section active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">TIMELESS ELEGANCE</h1>
+                <p class="hero-subtitle">Crafted with Passion, Adorned with Pride</p>
+                <a href="#" class="btn btn-primary" onclick="showSection('collections'); return false;">EXPLORE COLLECTION</a>
+            </div>
+        </section>
+
+        <!-- Featured Collections -->
+        <section class="featured-collections">
+            <div class="container">
+                <h2 class="section-title">Our Collections</h2>
+                <div class="collections-grid" id="collectionsGrid"></div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-products">
+            <div class="container">
+                <h2 class="section-title">Featured Products</h2>
+                <div class="products-grid" id="featuredProducts"></div>
+            </div>
+        </section>
+
+        <!-- Our Story -->
+        <section class="our-story">
+            <div class="container">
+                <h2 class="section-title">OUR STORY</h2>
+                <div class="story-grid">
+                    <div class="story-image">
+                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500" alt="Mani Darshan Jewels Craftsmanship">
+                    </div>
+                    <div class="story-content">
+                        <h3>Heritage of Excellence</h3>
+                        <p>For over three decades, Mani Darshan Jewels has been synonymous with luxury, quality, and timeless beauty. Each piece in our collection is meticulously crafted by master artisans who pour their passion and expertise into every detail.</p>
+                        <p>Our commitment to excellence extends beyond craftsmanship. We source only the finest gemstones and precious metals, ensuring that every piece meets our exacting standards of quality and beauty.</p>
+                        <p>At Mani Darshan, we believe that jewelry is more than just an ornament - it's a reflection of your personality, your moments, and your memories. Every creation tells a unique story of elegance and tradition. We take pride in creating heirloom pieces that will be treasured for generations to come.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <div class="testimonials-grid" id="testimonialsGrid"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Collections Section -->
+    <div id="collections-section" class="section">
+        <section class="featured-collections" style="padding-top: 40px;">
+            <div class="container">
+                <h2 class="section-title">All Collections</h2>
+                <div class="collections-grid" id="allCollectionsGrid"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Collection Detail Section -->
+    <div id="collection-detail-section" class="section">
+        <section class="featured-products" style="padding-top: 40px;">
+            <div class="container">
+                <h2 class="section-title" id="collectionDetailTitle">Collection Products</h2>
+                <div class="products-grid" id="collectionProducts"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Section -->
+    <div id="about-section" class="section">
+        <section class="about" style="padding-top: 40px;">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600" alt="Jewelry Craftsmanship">
+                    </div>
+                    <div class="about-content">
+                        <h2 class="section-title">Our Heritage</h2>
+                        <p>For over three generations, Mani Darshan Jewels has been crafting exquisite jewelry that celebrates life's precious moments. Our legacy is built on uncompromising quality, timeless designs, and a passion for perfection.</p>
+                        <p>Each piece in our collection is a masterpiece, meticulously crafted by skilled artisans who bring decades of expertise to every creation. We blend traditional craftsmanship with contemporary aesthetics to create jewelry that transcends trends.</p>
+                        <p>From bridal collections to everyday elegance, our jewelry tells your story with grace and sophistication.</p>
+                        <p><strong>Visit us at:</strong><br>
+                        Office No.56, 2nd Floor, Near Carron NX, Sojat Swarn,<br>
+                        Dr. Veigas Street, Kalbadevi, Mumbai – 400002</p>
+                        <a href="#" class="btn btn-outline" onclick="showSection('collections'); return false;">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact-section" class="section">
+        <section class="contact" style="padding-top: 40px;">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Visit Our Showroom</h3>
+                                <p>Office No.56, 2nd Floor, Near Carron NX, Sojat Swarn,<br>Dr. Veigas Street, Kalbadevi, Mumbai – 400002</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h3>WhatsApp Us</h3>
+                                <p><a href="https://wa.me/918452957597" target="_blank">+91 84529 57597</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email Us</h3>
+                                <p>manidarshanjewels@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Business Hours</h3>
+                                <p>Monday - Saturday: 10 AM - 8 PM<br>Sunday: 11 AM - 6 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-input" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" class="form-input" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">INQUIRE VIA WHATSAPP</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-badge">MD</div>
+                        <div class="logo-text">
+                            <span class="brand-name">MANI DARSHAN</span>
+                            <span class="brand-subtitle">JEWELS</span>
+                        </div>
+                    </div>
+                    <p class="footer-desc">Crafting timeless elegance for over three generations.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/manidarshanjewels?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Visit our Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="showSection('home'); return false;">Home</a></li>
+                        <li><a href="#" onclick="showSection('collections'); return false;">Collections</a></li>
+                        <li><a href="#" onclick="showSection('about'); return false;">About Us</a></li>
+                        <li><a href="#" onclick="showSection('contact'); return false;">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://wa.me/918452957597" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp: +91 84529 57597</a></li>
+                        <li><a href="#" onclick="showSection('contact'); return false;">Get in Touch</a></li>
+                        <li><a href="#" onclick="showSection('about'); return false;">About Us</a></li>
+                        <li><a href="#" onclick="showSection('collections'); return false;">View Collections</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Inquire Now</h4>
+                    <p>Contact us on WhatsApp for product inquiries and custom jewelry requests.</p>
+                    <a href="https://wa.me/918452957597?text=Hi,%20I'd%20like%20to%20inquire%20about%20your%20jewelry%20collection" target="_blank" class="btn btn-primary" style="display: inline-block; margin-top: 10px;">MESSAGE ON WHATSAPP</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mani Darshan Jewels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // WhatsApp Configuration
+        const WHATSAPP_NUMBER = '918452957597';
+        const WHATSAPP_BASE_URL = 'https://wa.me/';
+
+        function createWhatsAppLink(message) {
+            return `${WHATSAPP_BASE_URL}${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        }
+
+        function inquireProduct(productName) {
+            const message = `Hi, I'm interested in ${productName}. Could you provide more details?`;
+            window.open(createWhatsAppLink(message), '_blank');
+        }
+
+        // Products Data
+        const productsData = {
+            necklaces: [
+                { name: "Diamond Necklace", price: 85000, image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400" },
+                { name: "Pearl Necklace", price: 38000, image: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400" },
+                { name: "Emerald Pendant", price: 72000, image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400" }
+            ],
+            earrings: [
+                { name: "Gold Earrings", price: 45000, image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400" },
+                { name: "Sapphire Earrings", price: 55000, image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400" }
+            ],
+            bracelets: [
+                { name: "Ruby Bracelet", price: 62000, image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400" },
+                { name: "Gold Bangle", price: 48000, image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400" }
+            ],
+            rings: [
+                { name: "Platinum Ring", price: 95000, image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400" },
+                { name: "Rose Gold Ring", price: 42000, image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=400" }
+            ],
+            kadas: [
+                { name: "Traditional Gold Kada", price: 52000, image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400" },
+                { name: "Diamond-studded Kada", price: 88000, image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400" },
+                { name: "Kundan Kada", price: 76000, image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400" },
+                { name: "Pearl Kada", price: 48000, image: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400" },
+                { name: "Contemporary Kada", price: 65000, image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400" }
+            ],
+            sets: [
+                { name: "Bridal Gold Set", price: 185000, image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400" },
+                { name: "Diamond Ensemble", price: 225000, image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400" },
+                { name: "Kundan Set", price: 165000, image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400" },
+                { name: "Pearl & Gold Set", price: 95000, image: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400" },
+                { name: "Contemporary Trio", price: 135000, image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400" }
+            ]
+        };
+
+        // Collections Data
+        const collections = [
+            { name: "Necklaces", image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600", description: "Elegant necklaces for every occasion", key: "necklaces" },
+            { name: "Earrings", image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600", description: "Stunning earrings to complement your style", key: "earrings" },
+            { name: "Bracelets", image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600", description: "Exquisite bracelets and bangles", key: "bracelets" },
+            { name: "Rings", image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600", description: "Beautiful rings for special moments", key: "rings" },
+            { name: "Kadas", image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600", description: "Traditional Indian kadas and bangles", key: "kadas" },
+            { name: "Sets", image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600", description: "Complete jewelry sets for every occasion", key: "sets" }
+        ];
+
+        // Testimonials Data
+        const testimonials = [
+            { name: "Priya Sharma", rating: 5, text: "The craftsmanship is absolutely stunning. Each piece tells a story of elegance and tradition." },
+            { name: "Aisha Khan", rating: 5, text: "Exceptional quality and service. My wedding jewelry was beyond my expectations." },
+            { name: "Kavya Reddy", rating: 5, text: "A treasure trove of exquisite designs. Mani Darshan never disappoints." },
+            { name: "Rajesh Kumar", rating: 5, text: "Excellent selection of traditional and contemporary designs. The attention to detail is truly remarkable." }
+        ];
+
+        // Format price
+        function formatPrice(price) {
+            return '₹' + price.toLocaleString('en-IN');
+        }
+
+        // Show alert
+        function showAlert(message, type = 'success') {
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.textContent = message;
+            document.body.appendChild(alert);
+            setTimeout(() => alert.remove(), 3000);
+        }
+
+        // Section Navigation
+        function showSection(sectionName) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            const targetSection = document.getElementById(`${sectionName}-section`);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            // Update nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Close mobile menu
+            document.getElementById('navMenu').classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show collection detail
+        function showCollectionDetail(collectionKey, collectionName) {
+            const products = productsData[collectionKey] || [];
+            const collectionProducts = document.getElementById('collectionProducts');
+            const collectionDetailTitle = document.getElementById('collectionDetailTitle');
+            
+            collectionDetailTitle.textContent = collectionName;
+            
+            collectionProducts.innerHTML = products.map(product => `
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">${collectionName}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <div class="product-price">${formatPrice(product.price)}</div>
+                        <button class="btn btn-primary" onclick="inquireProduct('${product.name}')">INQUIRE ON WHATSAPP</button>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Show collection detail section
+            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+            document.getElementById('collection-detail-section').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('hamburger').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Render Collections for Home
+            const collectionsGrid = document.getElementById('collectionsGrid');
+            collectionsGrid.innerHTML = collections.map(collection => `
+                <div class="collection-card" onclick="showCollectionDetail('${collection.key}', '${collection.name}')">
+                    <img src="${collection.image}" alt="${collection.name}">
+                    <div class="collection-overlay">
+                        <h3>${collection.name}</h3>
+                        <p>${collection.description}</p>
+                        <button class="btn btn-discover" onclick="event.stopPropagation(); showCollectionDetail('${collection.key}', '${collection.name}')" style="margin-top: 15px;">DISCOVER MORE</button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Collections for Collections Page
+            const allCollectionsGrid = document.getElementById('allCollectionsGrid');
+            allCollectionsGrid.innerHTML = collections.map(collection => `
+                <div class="collection-card" onclick="showCollectionDetail('${collection.key}', '${collection.name}')">
+                    <img src="${collection.image}" alt="${collection.name}">
+                    <div class="collection-overlay">
+                        <h3>${collection.name}</h3>
+                        <p>${collection.description}</p>
+                        <button class="btn btn-discover" onclick="event.stopPropagation(); showCollectionDetail('${collection.key}', '${collection.name}')" style="margin-top: 15px;">DISCOVER MORE</button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Featured Products
+            const featuredProducts = document.getElementById('featuredProducts');
+            const allProducts = [];
+            Object.keys(productsData).forEach(category => {
+                productsData[category].forEach(product => {
+                    allProducts.push({ ...product, category });
+                });
+            });
+            
+            const featured = allProducts.slice(0, 8);
+            featuredProducts.innerHTML = featured.map(product => `
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">${product.category}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <div class="product-price">${formatPrice(product.price)}</div>
+                        <button class="btn btn-primary" onclick="inquireProduct('${product.name}')">INQUIRE ON WHATSAPP</button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Testimonials
+            const testimonialsGrid = document.getElementById('testimonialsGrid');
+            testimonialsGrid.innerHTML = testimonials.map(testimonial => `
+                <div class="testimonial-card">
+                    <div class="stars">${'★'.repeat(testimonial.rating)}</div>
+                    <p class="testimonial-text">"${testimonial.text}"</p>
+                    <div class="testimonial-author">${testimonial.name}</div>
+                </div>
+            `).join('');
+            
+            // Contact form handler
+            document.getElementById('contactForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const name = formData.get('name');
+                const message = formData.get('message');
+                const whatsappMessage = `Customer inquiry from ${name}: ${message}`;
+                window.open(createWhatsAppLink(whatsappMessage), '_blank');
+                e.target.reset();
+                showAlert('Opening WhatsApp...', 'success');
+            });
+        });
+    </script>
+</body>
+</html>
